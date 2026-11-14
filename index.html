@@ -1,567 +1,268 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>shadesagebeauty — Find Your Lip Shade</title>
-<meta name="description" content="Every lipstick from our videos in one place. Search by brand, shade name, or video.">
-<meta name="theme-color" content="#FDFBF9">
-<meta property="og:title" content="shadesagebeauty — Find Your Lip Shade">
-<meta property="og:description" content="Every lipstick from our videos in one place. Search by brand, shade name, or video.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238A4B54'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial' font-size='16' font-weight='600' fill='%23FDFBF9' text-anchor='middle'%3Es%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop @shadesagebeauty</title>
+<meta name="description" content="Every lip shade from ShadeSage videos, by video number.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#FDFBF9;
-  --card:#FFFFFF;
-  --ink:#2C2422;
-  --muted:#8B7C77;
-  --rose:#8A4B54;
-  --blush:#F4E7E4;
-  --line:#EDE4DE;
-  --shadow:0 1px 2px rgba(44,36,34,.04), 0 6px 18px rgba(44,36,34,.05);
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-size:16px;
-  line-height:1.4;
-  padding-bottom:calc(66px + env(safe-area-inset-bottom));
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:480px;margin:0 auto;padding:0 18px}
-
-/* header */
-header{padding:22px 0 14px}
-.brandrow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.brand{display:block;text-decoration:none;color:var(--ink)}
-.brand h1{
-  margin:0;
-  font-size:19px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:lowercase;
-}
-.tagline{
-  margin:5px 0 0;
-  font-size:11.5px;
-  letter-spacing:.08em;
-  color:var(--rose);
-  text-transform:none;
-}
-.socials{display:flex;gap:8px;padding-top:2px}
-.socials a{
-  display:flex;align-items:center;justify-content:center;
-  width:36px;height:36px;border-radius:50%;
-  background:var(--blush);
-  color:var(--rose);
-  text-decoration:none;
-}
-.socials a:active{transform:scale(.96)}
-.socials svg{width:17px;height:17px;display:block}
-
-/* search */
-.sticky{
-  position:sticky;top:0;z-index:20;
-  background:linear-gradient(to bottom,var(--bg) 78%,rgba(253,251,249,0));
-  padding:6px 0 12px;
-}
-.searchbox{position:relative}
-.searchbox svg{
-  position:absolute;left:15px;top:50%;transform:translateY(-50%);
-  width:17px;height:17px;color:var(--muted);pointer-events:none;
-}
-#q{
-  width:100%;
-  height:50px;
-  padding:0 44px 0 42px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:var(--card);
-  color:var(--ink);
-  font-size:16px;
-  font-family:inherit;
-  box-shadow:var(--shadow);
-  -webkit-appearance:none;
-  appearance:none;
-  outline:none;
-}
-#q::placeholder{color:#B3A7A2}
-#q::-webkit-search-cancel-button,#q::-webkit-search-decoration{-webkit-appearance:none;display:none}
-#q:focus{border-color:#D9C3C0;box-shadow:0 0 0 3px rgba(138,75,84,.08)}
-#clear{
-  display:none;
-  position:absolute;right:8px;top:50%;transform:translateY(-50%);
-  width:32px;height:32px;border:0;border-radius:50%;
-  background:#F1E9E6;color:var(--muted);
-  font-size:15px;line-height:1;
-  cursor:pointer;
-}
-#clear.on{display:block}
-
-/* filters */
-.filters{
-  display:flex;gap:8px;overflow-x:auto;
-  padding:2px 0 4px;
-  margin:0 -18px;
-  padding-left:18px;padding-right:18px;
-  scrollbar-width:none;
-  -webkit-overflow-scrolling:touch;
-}
-.filters::-webkit-scrollbar{display:none}
-.chip{
-  flex:0 0 auto;
-  height:34px;
-  padding:0 14px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:var(--card);
-  color:var(--muted);
-  font-family:inherit;
-  font-size:12.5px;
-  letter-spacing:.01em;
-  white-space:nowrap;
-  cursor:pointer;
-  -webkit-appearance:none;
-  appearance:none;
-}
-.chip[aria-pressed="true"]{
-  background:var(--rose);
-  border-color:var(--rose);
-  color:#fff;
-}
-.count{
-  margin:14px 0 8px;
-  font-size:11.5px;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.vtitle{
-  margin:-2px 0 10px;
-  font-size:13px;
-  line-height:1.35;
-  color:var(--ink);
-  display:none;
-}
-.vtitle.on{display:block}
-
-/* list */
-.list{list-style:none;margin:0;padding:0}
-.item{margin-bottom:9px}
-.row{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 14px;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:14px;
-  text-decoration:none;
-  color:inherit;
-  box-shadow:var(--shadow);
-}
-.row:active{background:#FCF8F6}
-.meta{min-width:0;flex:1}
-.brandname{
-  display:block;
-  font-size:10px;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  color:var(--rose);
-  margin-bottom:3px;
-}
-.shade{
-  display:block;
-  font-size:15px;
-  font-weight:600;
-  letter-spacing:-.01em;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.product{
-  display:block;
-  margin-top:2px;
-  font-size:12.5px;
-  color:var(--muted);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-}
-.badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
-.badge{
-  font-size:10.5px;
-  letter-spacing:.02em;
-  color:var(--rose);
-  background:var(--blush);
-  border-radius:6px;
-  padding:2px 7px;
-}
-.go{
-  flex:0 0 auto;
-  display:flex;align-items:center;gap:5px;
-  font-size:11.5px;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--rose);
-}
-.go svg{width:12px;height:12px}
-
-/* empty */
-.empty{
-  display:none;
-  padding:38px 8px 46px;
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-}
-.empty strong{display:block;color:var(--ink);font-size:15px;margin-bottom:6px;font-weight:600}
-.empty .hint{display:block;margin-top:12px;font-size:12.5px;line-height:1.7}
-body.nomatch .empty{display:block}
-body.nomatch .list{display:none}
-
-/* footer */
-footer{
-  border-top:1px solid var(--line);
-  margin-top:22px;
-  padding:18px 0 26px;
-  text-align:center;
-}
-.footlinks{
-  display:flex;justify-content:center;gap:18px;
-  margin-bottom:12px;
-}
-.footlinks a{
-  font-size:12px;
-  letter-spacing:.04em;
-  color:var(--rose);
-  text-decoration:none;
-}
-.disclosure{
-  font-size:11px;
-  line-height:1.5;
-  color:var(--muted);
-  margin:0;
-}
-.fixedbar{
-  position:fixed;left:0;right:0;bottom:0;z-index:30;
-  padding:9px 14px calc(9px + env(safe-area-inset-bottom));
-  background:rgba(253,251,249,.94);
-  border-top:1px solid var(--line);
-  backdrop-filter:saturate(140%) blur(8px);
-  -webkit-backdrop-filter:saturate(140%) blur(8px);
-}
-.fixedbar p{
-  max-width:480px;margin:0 auto;
-  font-size:10.5px;line-height:1.45;
-  color:var(--muted);text-align:center;
-}
+  :root { --bg:#F6F1EC; --card:#FFFFFF; --ink:#1D1A19; --muted:#7A706A; --rose:#B3263E; --soft:#ECE5DE; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .wrap { max-width:640px; margin:0 auto; padding:28px 16px 48px; }
+  h1 { font-size:34px; font-weight:900; letter-spacing:-.02em; margin:0; text-align:center; }
+  .sub { text-align:center; color:var(--muted); margin:8px 0 20px; font-size:15px; }
+  .search { display:flex; gap:8px; margin:0 0 20px; }
+  .search input { flex:1; font:inherit; font-size:16px; padding:14px 16px; border-radius:14px; border:1.5px solid var(--soft); background:var(--card); }
+  .search input:focus { outline:none; border-color:var(--rose); }
+  .card { background:var(--card); border-radius:22px; padding:18px 16px 8px; margin:0 0 16px; box-shadow:0 8px 24px rgba(60,40,30,.06); }
+  .card header { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .no { background:var(--rose); color:#fff; font-weight:800; font-size:13px; padding:5px 11px; border-radius:999px; }
+  .series { font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--rose); }
+  .date { margin-left:auto; color:var(--muted); font-size:13px; }
+  h2 { font-size:21px; font-weight:800; margin:10px 0 6px; }
+  ul { list-style:none; margin:0; padding:0; }
+  .row { display:flex; align-items:center; gap:12px; padding:12px 0; border-top:1px solid var(--soft); }
+  .row:first-child { border-top:none; }
+  .dot { width:34px; height:34px; border-radius:50%; flex:none; box-shadow:inset 0 0 0 2px rgba(255,255,255,.6); }
+  .meta { flex:1; min-width:0; display:flex; flex-direction:column; }
+  .role { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  .name { font-size:16px; }
+  .line { font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .btn { flex:none; text-decoration:none; background:var(--ink); color:#fff; font-weight:700; font-size:14px; padding:10px 14px; border-radius:999px; }
+  .btn.alt { background:#fff; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--ink); }
+  .empty { text-align:center; color:var(--muted); display:none; }
+  footer { color:var(--muted); font-size:12px; text-align:center; margin-top:24px; line-height:1.6; }
 </style>
 </head>
 <body>
-
-<header class="wrap">
-  <div class="brandrow">
-    <a class="brand" href="./">
-      <h1>shadesagebeauty</h1>
-      <p class="tagline">Choose Right, Waste Less.</p>
-    </a>
-    <div class="socials">
-      <a href="https://www.tiktok.com/@shadesagebeauty" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8a5.4 5.4 0 0 1-3.2-2.6h-2.9v12.1a2.9 2.9 0 1 1-2.1-2.8V9.5a5.8 5.8 0 1 0 5 5.7V8.9a8.3 8.3 0 0 0 4.3 1.2V7.2a5.4 5.4 0 0 1-1.1-1.4z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@shadesagebeauty" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15.2V8.8l5.5 3.2z"/></svg>
-      </a>
-    </div>
-  </div>
-</header>
-
 <div class="wrap">
-  <div class="sticky">
-    <div class="searchbox">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
-      <input id="q" type="search" inputmode="search" autocomplete="off" autocapitalize="none" spellcheck="false"
-             placeholder="Search a brand, shade, or video" aria-label="Search shades">
-      <button id="clear" type="button" aria-label="Clear search">&times;</button>
-    </div>
-    <div class="filters" id="filters" role="group" aria-label="Filter by video"></div>
-  </div>
-
-  <p class="count" id="count" aria-live="polite"></p>
-  <p class="vtitle" id="vtitle"></p>
-
-  <ul class="list" id="list"></ul>
-
-  <div class="empty" id="empty">
-    <strong>No shade matches that.</strong>
-    Try a brand (MAC, Dior, Milani), a shade (Velvet Teddy, 999, Pillow Talk), or a video.
-    <span class="hint">More shades are added with every new video.</span>
-  </div>
-
+  <h1>Shop @shadesagebeauty</h1>
+  <p class="sub">Find the video number from the caption.</p>
+  <div class="search"><input id="q" inputmode="search" placeholder="Video No. (e.g. 04) or shade" aria-label="Search by video number or shade"></div>
+  
+    <article class="card" data-no="04" data-text="walk of no shame for less">
+      <header>
+        <span class="no">No. 04</span><span class="series">For Less</span>
+      </header>
+      <h2>Walk of No Shame</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#9D1717"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Charlotte Tilbury <b>Walk Of No Shame</b></span>
+            <span class="line">Matte Revolution</span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619377" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#99171D"></span>
+          <div class="meta">
+            <span class="role">#1</span>
+            <span class="name">Revlon <b>Fireside</b></span>
+            <span class="line">Super Lustrous Ultra Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Revlon+Super+Lustrous+Ultra+Lipstick+Fireside&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#A61421"></span>
+          <div class="meta">
+            <span class="role">#2</span>
+            <span class="name">Maybelline <b>Wild Card</b></span>
+            <span class="line">Moisturizing Serum Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Wild+Card&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#982324"></span>
+          <div class="meta">
+            <span class="role">#3</span>
+            <span class="name">BLK/OPL <b>Orange You Fierce</b></span>
+            <span class="line">COLORSPLURGE Risqué Crème Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=BLK%2FOPL+COLORSPLURGE+Risqu%C3%A9+Cr%C3%A8me+Lipstick+Orange+You+Fierce&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="03" data-text="viral nudes warm or cool">
+      <header>
+        <span class="no">No. 03</span><span class="series">Warm or Cool</span>
+      </header>
+      <h2>Viral Nudes</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#9A483B"></span>
+          <div class="meta">
+            <span class="role">Warm</span>
+            <span class="name">MAC <b>Taupe</b></span>
+            <span class="line">MACximal Silky Matte</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Taupe&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#BF6B63"></span>
+          <div class="meta">
+            <span class="role">Neutral · leans warm</span>
+            <span class="name">Dior <b>100 Nude Look</b></span>
+            <span class="line">Rouge Dior</span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/rouge-dior-lipstick-pimprod2043044?sku=2618570" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#9D4C46"></span>
+          <div class="meta">
+            <span class="role">Neutral · leans warm</span>
+            <span class="name">MAC <b>Velvet Teddy</b></span>
+            <span class="line">MACximal Silky Matte</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Velvet+Teddy&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#D97373"></span>
+          <div class="meta">
+            <span class="role">Neutral</span>
+            <span class="name">Charlotte Tilbury <b>Pillow Talk</b></span>
+            <span class="line">Matte Revolution</span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619368" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#D1747C"></span>
+          <div class="meta">
+            <span class="role">Cool</span>
+            <span class="name">NARS <b>Dolce Vita</b></span>
+            <span class="line">Afterglow Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=NARS+Afterglow+Lipstick+Dolce+Vita&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="02" data-text="dior 999 velvet for less">
+      <header>
+        <span class="no">No. 02</span><span class="series">For Less</span>
+      </header>
+      <h2>Dior 999 Velvet</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#C81D23"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Dior <b>999 Velvet</b></span>
+            <span class="line">Rouge Dior Lipstick</span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/rouge-dior-lipstick-pimprod2043044?sku=2618524" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#C01C2A"></span>
+          <div class="meta">
+            <span class="role">#1</span>
+            <span class="name">Juvia&#x27;s Place <b>New Flame</b></span>
+            <span class="line">The Red Satin Creamy Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Juvia%27s+Place+The+Red+Satin+Creamy+Lipstick+New+Flame&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#BA2129"></span>
+          <div class="meta">
+            <span class="role">#2</span>
+            <span class="name">Milani <b>Red Flag</b></span>
+            <span class="line">Color Fetish Matte Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Lipstick+Red+Flag&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#C7151E"></span>
+          <div class="meta">
+            <span class="role">#3</span>
+            <span class="name">BLK/OPL <b>C-Suite</b></span>
+            <span class="line">COLORSPLURGE Risqué Crème Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=BLK%2FOPL+COLORSPLURGE+Risqu%C3%A9+Cr%C3%A8me+Lipstick+C-Suite&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="01" data-text="90s nudes spot the splurge">
+      <header>
+        <span class="no">No. 01</span><span class="series">Spot the Splurge</span>
+      </header>
+      <h2>90s Nudes</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#A55147"></span>
+          <div class="meta">
+            <span class="role">Round 1</span>
+            <span class="name">Maybelline <b>Upstate</b></span>
+            <span class="line">Moisturizing Serum Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Upstate&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#9D4C46"></span>
+          <div class="meta">
+            <span class="role">Round 1</span>
+            <span class="name">MAC <b>Velvet Teddy</b></span>
+            <span class="line">MACximal Silky Matte</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Velvet+Teddy&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#A2454D"></span>
+          <div class="meta">
+            <span class="role">Round 2</span>
+            <span class="name">Charlotte Tilbury <b>Pillow Talk Medium</b></span>
+            <span class="line">Matte Revolution</span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619369" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#A74651"></span>
+          <div class="meta">
+            <span class="role">Round 2</span>
+            <span class="name">Milani <b>Smitten</b></span>
+            <span class="line">Color Fetish Matte</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Smitten&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#954440"></span>
+          <div class="meta">
+            <span class="role">Round 3</span>
+            <span class="name">Maybelline <b>Out &#x27;Til 4</b></span>
+            <span class="line">Moisturizing Serum Lipstick</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Out+%27Til+4&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#984C45"></span>
+          <div class="meta">
+            <span class="role">Round 3</span>
+            <span class="name">MAC <b>Whirl</b></span>
+            <span class="line">MACximal Silky Matte</span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Whirl&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+  <p class="empty" id="empty">No match. Try the number from the caption.</p>
   <footer>
-    <div class="footlinks">
-      <a href="https://www.tiktok.com/@shadesagebeauty" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://www.youtube.com/@shadesagebeauty" target="_blank" rel="noopener">YouTube</a>
-    </div>
-    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+    As an Amazon Associate I earn from qualifying purchases. Some links go to Ulta (not affiliate) when a brand isn't sold by Amazon.<br>
+    Prices shown in videos are at time of posting.
   </footer>
 </div>
-
-<div class="fixedbar">
-  <p>As an Amazon Associate I earn from qualifying purchases.</p>
-</div>
-
 <script>
-/* ------------------------------------------------------------------
-   ShadeSage data. To add a product, append one object to PRODUCTS.
-   A product that appears in more than one video keeps ONE entry and
-   lists every video id in "videos" — it is shown once, with badges.
-   Brand-new videos: add them to VIDEOS first.
-   ------------------------------------------------------------------ */
-const VIDEOS = [
-  {
-    id: "v1",
-    title: "Spot the Splurge | 90s Nude Lipsticks",
-    short: "90s Nudes",
-    youtube: "https://www.youtube.com/shorts/KpEyY8DsKfo",
-    tiktok: "https://www.tiktok.com/@shadesagebeauty/video/7708042414732233997"
-  },
-  {
-    id: "v2",
-    title: "Dior 999 Velvet for Less",
-    short: "Dior 999",
-    youtube: "https://www.youtube.com/shorts/wmd2neaK4eg",
-    tiktok: "https://www.tiktok.com/@shadesagebeauty/video/7708018425863458062"
-  }
-];
-
-const AFF_TAG = "shadesagebeau-20";
-
-const PRODUCTS = [
-  {
-    brand: "MAC",
-    shade: "Velvet Teddy",
-    product: "M\u00b7A\u00b7Cximal Silky Matte Lipstick",
-    videos: ["v1"],
-    url: "https://www.amazon.com/s?k=MAC+Macximal+Silky+Matte+Lipstick+Velvet+Teddy&tag=" + AFF_TAG
-  },
-  {
-    brand: "Maybelline",
-    shade: "Upstate",
-    product: "Serum Lipstick",
-    videos: ["v1"],
-    url: "https://www.amazon.com/s?k=Maybelline+Serum+Lipstick+Upstate&tag=" + AFF_TAG
-  },
-  {
-    brand: "Charlotte Tilbury",
-    shade: "Pillow Talk Medium",
-    product: "Matte Revolution Lipstick",
-    videos: ["v1"],
-    url: "https://www.amazon.com/s?k=Charlotte+Tilbury+Matte+Revolution+Pillow+Talk+Medium&tag=" + AFF_TAG
-  },
-  {
-    brand: "Milani",
-    shade: "Smitten",
-    product: "Color Fetish Matte Lipstick",
-    videos: ["v1"],
-    url: "https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Lipstick+Smitten&tag=" + AFF_TAG
-  },
-  {
-    brand: "MAC",
-    shade: "Whirl",
-    product: "M\u00b7A\u00b7Cximal Silky Matte Lipstick",
-    videos: ["v1"],
-    url: "https://www.amazon.com/s?k=MAC+Macximal+Silky+Matte+Lipstick+Whirl&tag=" + AFF_TAG
-  },
-  {
-    brand: "Maybelline",
-    shade: "Out 'Til 4",
-    product: "Serum Lipstick",
-    videos: ["v1"],
-    url: "https://www.amazon.com/s?k=Maybelline+Serum+Lipstick+Out+Til+4&tag=" + AFF_TAG
-  },
-  {
-    brand: "Dior",
-    shade: "999 Velvet",
-    product: "Rouge Dior Lipstick",
-    videos: ["v2"],
-    url: "https://www.amazon.com/s?k=Dior+Rouge+Dior+Lipstick+999+Velvet&tag=" + AFF_TAG
-  },
-  {
-    brand: "Juvia's Place",
-    shade: "New Flame",
-    product: "The Reds Satin Creamy Lipstick",
-    videos: ["v2"],
-    url: "https://www.amazon.com/s?k=Juvia%27s+Place+The+Reds+Satin+Creamy+Lipstick+New+Flame&tag=" + AFF_TAG
-  },
-  {
-    brand: "Milani",
-    shade: "Red Flag",
-    product: "Color Fetish Matte Lipstick",
-    videos: ["v2"],
-    url: "https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Lipstick+Red+Flag&tag=" + AFF_TAG
-  },
-  {
-    brand: "BLK/OPL",
-    shade: "C-Suite",
-    product: "COLORSPLURGE Risqu\u00e9 Cr\u00e8me Lipstick",
-    videos: ["v2"],
-    url: "https://www.amazon.com/s?k=BLK%2FOPL+Colorsplurge+Risque+Creme+Lipstick+C-Suite&tag=" + AFF_TAG
-  }
-];
-
-/* ---------- de-duplication: same brand + shade + product = one card ---------- */
-const norm = (s) => String(s)
-  .toLowerCase()
-  .normalize("NFKD")
-  .replace(/[\u0300-\u036f]/g, "")   // accents
-  .replace(/[\u00b7\u2022\u2019'`]/g, "") // middle dots, apostrophes
-  .replace(/[^a-z0-9]+/g, " ")        // punctuation -> space
-  .trim();
-
-const keyOf = (p) => norm(p.brand) + "|" + norm(p.shade) + "|" + norm(p.product);
-
-const videoById = {};
-VIDEOS.forEach(function (v) { videoById[v.id] = v; });
-
-const UNIQUE = [];
-const seen = {};
-PRODUCTS.forEach(function (p) {
-  const k = keyOf(p);
-  if (seen[k]) {
-    p.videos.forEach(function (vid) {
-      if (seen[k].videos.indexOf(vid) === -1) seen[k].videos.push(vid);
+  const q = document.getElementById('q'), cards = [...document.querySelectorAll('.card')], empty = document.getElementById('empty');
+  q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase().replace(/^no\.?\s*/, '');
+    let shown = 0;
+    cards.forEach(c => {
+      const n = c.dataset.no, hit = !v || n === v.padStart(2, '0') || c.dataset.text.includes(v) || c.textContent.toLowerCase().includes(v);
+      c.style.display = hit ? '' : 'none'; shown += hit;
     });
-    return;
-  }
-  const entry = {
-    brand: p.brand,
-    shade: p.shade,
-    product: p.product,
-    url: p.url,
-    videos: p.videos.slice()
-  };
-  seen[k] = entry;
-  UNIQUE.push(entry);
-});
-
-/* searchable text is built after de-duplication so a shade shared by two
-   videos is still found by either video's title */
-UNIQUE.forEach(function (entry, i) {
-  entry.selfHay = norm([entry.brand, entry.shade, entry.product].join(" "));
-  entry.videoHay = norm(entry.videos.map(function (id) {
-    const v = videoById[id];
-    return v ? v.title + " " + v.short : "";
-  }).join(" "));
-  entry.hay = entry.selfHay + " " + entry.videoHay;
-  entry.order = i;
-});
-
-/* ---------- filter chips ---------- */
-const filtersEl = document.getElementById("filters");
-const FILTERS = [{ id: "all", label: "All shades" }].concat(
-  VIDEOS.map(function (v) { return { id: v.id, label: v.short }; })
-);
-
-FILTERS.forEach(function (f, i) {
-  const b = document.createElement("button");
-  b.type = "button";
-  b.className = "chip";
-  b.textContent = f.label;
-  b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
-  b.dataset.filter = f.id;
-  b.addEventListener("click", function () {
-    active = f.id;
-    [].forEach.call(filtersEl.children, function (c) {
-      c.setAttribute("aria-pressed", c.dataset.filter === active ? "true" : "false");
-    });
-    render();
+    empty.style.display = shown ? 'none' : 'block';
   });
-  filtersEl.appendChild(b);
-});
-
-/* ---------- render ---------- */
-const listEl = document.getElementById("list");
-const countEl = document.getElementById("count");
-const vtitleEl = document.getElementById("vtitle");
-const qEl = document.getElementById("q");
-const clearEl = document.getElementById("clear");
-let active = "all";
-
-const CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
-
-function render() {
-  const q = norm(qEl.value);
-  clearEl.classList.toggle("on", qEl.value.length > 0);
-
-  const tokens = q ? q.split(" ") : [];
-  const hits = UNIQUE.filter(function (p) {
-    if (active !== "all" && p.videos.indexOf(active) === -1) return false;
-    return tokens.every(function (t) { return p.hay.indexOf(t) !== -1; });
-  });
-
-  // A shade or brand match wins. Only when nothing in the products themselves
-  // matches does the search fall back to matching a video title.
-  const direct = hits.filter(function (p) {
-    return tokens.every(function (t) { return p.selfHay.indexOf(t) !== -1; });
-  });
-  const rows = direct.length ? direct : hits;
-
-  listEl.innerHTML = "";
-  rows.forEach(function (p) {
-    const li = document.createElement("li");
-    li.className = "item";
-
-    const a = document.createElement("a");
-    a.className = "row";
-    a.href = p.url;
-    a.target = "_blank";
-    a.rel = "noopener sponsored nofollow";
-
-    const badges = p.videos.map(function (id) {
-      const v = videoById[id];
-      return '<span class="badge">' + (v ? v.short : id) + "</span>";
-    }).join("");
-
-    a.innerHTML =
-      '<span class="meta">' +
-        '<span class="brandname">' + p.brand + "</span>" +
-        '<span class="shade">' + p.shade + "</span>" +
-        '<span class="product">' + p.product + "</span>" +
-        (badges ? '<span class="badges">' + badges + "</span>" : "") +
-      "</span>" +
-      '<span class="go">Shop' + CHEV + "</span>";
-
-    li.appendChild(a);
-    listEl.appendChild(li);
-  });
-
-  document.body.classList.toggle("nomatch", rows.length === 0);
-
-  if (active !== "all" && videoById[active]) {
-    vtitleEl.textContent = videoById[active].title;
-    vtitleEl.classList.add("on");
-  } else {
-    vtitleEl.textContent = "";
-    vtitleEl.classList.remove("on");
-  }
-
-  const n = rows.length;
-  const vids = new Set();
-  rows.forEach(function (p) { p.videos.forEach(function (v) { vids.add(v); }); });
-  countEl.textContent = n === 0
-    ? "0 shades"
-    : n + (n === 1 ? " shade" : " shades") + " \u00b7 " + vids.size + (vids.size === 1 ? " video" : " videos");
-}
-
-qEl.addEventListener("input", render);
-clearEl.addEventListener("click", function () {
-  qEl.value = "";
-  qEl.focus();
-  render();
-});
-
-render();
 </script>
 </body>
 </html>
