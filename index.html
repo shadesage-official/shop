@@ -21,6 +21,7 @@
   .card header { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
   .no { background:var(--rose); color:#fff; font-weight:800; font-size:13px; padding:5px 11px; border-radius:999px; }
   .series { font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--rose); }
+  .save { margin-left:auto; color:var(--rose); font-weight:800; font-size:13px; box-shadow:inset 0 0 0 1.5px var(--rose); padding:4px 10px; border-radius:999px; }
   .date { margin-left:auto; color:var(--muted); font-size:13px; }
   h2 { font-size:21px; font-weight:800; margin:10px 0 6px; }
   ul { list-style:none; margin:0; padding:0; }
@@ -30,7 +31,9 @@
   .meta { flex:1; min-width:0; display:flex; flex-direction:column; }
   .role { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
   .name { font-size:16px; }
-  .line { font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .line { font-size:13px; color:var(--muted); display:flex; gap:4px; min-width:0; white-space:nowrap; }
+  .pn { overflow:hidden; text-overflow:ellipsis; min-width:0; }
+  .pr { flex:none; }
   .btn { flex:none; text-decoration:none; background:var(--ink); color:#fff; font-weight:700; font-size:14px; padding:10px 14px; border-radius:999px; }
   .btn.alt { background:#fff; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--ink); }
   .empty { text-align:center; color:var(--muted); display:none; }
@@ -43,159 +46,247 @@
   <p class="sub">Find the video number from the caption.</p>
   <div class="search"><input id="q" inputmode="search" placeholder="Video No. (e.g. 04) or shade" aria-label="Search by video number or shade"></div>
   
-    <article class="card" data-no="04" data-text="walk of no shame for less">
+    <article class="card" data-no="10" data-text="ysl candy glow 44b nude lavallière ysl candy glow 44b dupe ($43 → $27) dupes">
       <header>
-        <span class="no">No. 04</span><span class="series">For Less</span>
+        <span class="no">No. 10</span><span class="series">Dupes</span><span class="save">Save $16</span>
       </header>
-      <h2>Walk of No Shame</h2>
+      <h2>YSL Candy Glow 44B Dupe ($43 → $27)</h2>
       <ul>
         <li class="row">
-          <span class="dot" style="background:#9D1717"></span>
+          <span class="dot" style="background:#D87380"></span>
           <div class="meta">
             <span class="role">Original</span>
-            <span class="name">Charlotte Tilbury <b>Walk Of No Shame</b></span>
-            <span class="line">Matte Revolution</span>
+            <span class="name">YSL <b>44B Nude Lavallière</b></span>
+            <span class="line"><span class="pn">Candy Glow Tinted Butter Balm</span><span class="pr">· $43</span></span>
           </div>
-          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619377" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+          <a class="btn alt" href="https://www.sephora.com" target="_blank" rel="nofollow sponsored noopener">Sephora</a>
         </li>
         <li class="row">
-          <span class="dot" style="background:#99171D"></span>
+          <span class="dot" style="background:#D9737E"></span>
           <div class="meta">
-            <span class="role">#1</span>
-            <span class="name">Revlon <b>Fireside</b></span>
-            <span class="line">Super Lustrous Ultra Lipstick</span>
+            <span class="role">Dupe 1 · in the video</span>
+            <span class="name">Tarte <b>Rose</b></span>
+            <span class="line"><span class="pn">Maracuja Juicy Lip Balm</span><span class="pr">· $27</span></span>
           </div>
-          <a class="btn" href="https://www.amazon.com/s?k=Revlon+Super+Lustrous+Ultra+Lipstick+Fireside&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+          <a class="btn" href="https://www.amazon.com/s?k=Tarte+Maracuja+Juicy+Lip+Balm+Rose&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
         <li class="row">
-          <span class="dot" style="background:#A61421"></span>
+          <span class="dot" style="background:#E07A88"></span>
           <div class="meta">
-            <span class="role">#2</span>
-            <span class="name">Maybelline <b>Wild Card</b></span>
-            <span class="line">Moisturizing Serum Lipstick</span>
+            <span class="role">Dupe 2</span>
+            <span class="name">jane iredale <b>Flirt</b></span>
+            <span class="line"><span class="pn">LipDrink Lip Balm</span><span class="pr">· $25</span></span>
           </div>
-          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Wild+Card&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+          <a class="btn" href="https://www.amazon.com/s?k=jane+iredale+LipDrink+Lip+Balm+Flirt&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
         <li class="row">
-          <span class="dot" style="background:#982324"></span>
+          <span class="dot" style="background:#CF6F77"></span>
           <div class="meta">
-            <span class="role">#3</span>
-            <span class="name">BLK/OPL <b>Orange You Fierce</b></span>
-            <span class="line">COLORSPLURGE Risqué Crème Lipstick</span>
+            <span class="role">Dupe 3</span>
+            <span class="name">Naturium <b>Petal</b></span>
+            <span class="line"><span class="pn">Phyto-Glow Lip Balm</span><span class="pr">· $10</span></span>
           </div>
-          <a class="btn" href="https://www.amazon.com/s?k=BLK%2FOPL+COLORSPLURGE+Risqu%C3%A9+Cr%C3%A8me+Lipstick+Orange+You+Fierce&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+          <a class="btn" href="https://www.amazon.com/s?k=Naturium+Phyto-Glow+Lip+Balm+Petal&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
       </ul>
     </article>
-    <article class="card" data-no="03" data-text="viral nudes warm or cool">
+    <article class="card" data-no="09" data-text="huda beauty lip contour stain soft nude huda beauty lip contour stain soft nude for less">
       <header>
-        <span class="no">No. 03</span><span class="series">Warm or Cool</span>
+        <span class="no">No. 09</span><span class="series">For Less</span>
       </header>
-      <h2>Viral Nudes</h2>
+      <h2>Huda Beauty Lip Contour Stain Soft Nude</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#BE756C"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Huda Beauty <b>Soft Nude</b></span>
+            <span class="line"><span class="pn">Lip Contour Stain</span><span class="pr">· $25</span></span>
+          </div>
+          <a class="btn alt" href="https://hudabeauty.com/products/lip-contour-stain" target="_blank" rel="nofollow sponsored noopener">Huda Beauty</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#BF726B"></span>
+          <div class="meta">
+            <span class="role">#1</span>
+            <span class="name">fwee <b>Camelia</b></span>
+            <span class="line"><span class="pn">Lock&#x27;n Line Lip Contour Stain</span><span class="pr">· $12</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=fwee+Lock%27n+Line+Lip+Contour+Stain+Camelia&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#B9706A"></span>
+          <div class="meta">
+            <span class="role">#2</span>
+            <span class="name">Maybelline <b>Upstate</b></span>
+            <span class="line"><span class="pn">Lifter Liner</span><span class="pr">· $10</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Lifter+Liner+Upstate&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#B8786D"></span>
+          <div class="meta">
+            <span class="role">#3</span>
+            <span class="name">e.l.f. <b>Chai Me</b></span>
+            <span class="line"><span class="pn">Main Stain Lip Marker</span><span class="pr">· $5</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=e.l.f.+Main+Stain+Lip+Marker+Chai+Me&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="08" data-text="hailey&#x27;s oscar lip hailey&#x27;s oscar lip celeb combo for less">
+      <header>
+        <span class="no">No. 08</span><span class="series">Celeb Combo for Less</span>
+      </header>
+      <h2>Hailey&#x27;s Oscar Lip</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#AA674B"></span>
+          <div class="meta">
+            <span class="role">Step 1 · Original</span>
+            <span class="name">rhode <b>Balance</b></span>
+            <span class="line"><span class="pn">Peptide Lip Shape</span><span class="pr">· $24</span></span>
+          </div>
+          <a class="btn alt" href="https://www.rhodeskin.com/products/peptide-lip-shape-balance" target="_blank" rel="nofollow sponsored noopener">rhode</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#B1674A"></span>
+          <div class="meta">
+            <span class="role">Step 1 · For less</span>
+            <span class="name">e.l.f. <b>Deep Brown</b></span>
+            <span class="line"><span class="pn">Love Triangle Lip Filler Liner</span><span class="pr">· $5</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=e.l.f.+Love+Triangle+Lip+Filler+Liner+Deep+Brown&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#C29C8C"></span>
+          <div class="meta">
+            <span class="role">Step 2 · Original</span>
+            <span class="name">m.ph <b>Tease</b></span>
+            <span class="line"><span class="pn">The Overliner</span><span class="pr">· $25</span></span>
+          </div>
+          <a class="btn alt" href="https://mphbeauty.com/products/the-overliner-tease" target="_blank" rel="nofollow sponsored noopener">m.ph</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#9B6855"></span>
+          <div class="meta">
+            <span class="role">Step 2 · For less</span>
+            <span class="name">NYX <b>Natural</b></span>
+            <span class="line"><span class="pn">Mechanical Lip Liner</span><span class="pr">· $6</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=NYX+Mechanical+Lip+Liner+Natural&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#D86E6D"></span>
+          <div class="meta">
+            <span class="role">Step 3 · Original</span>
+            <span class="name">m.ph <b>Tickled Pink</b></span>
+            <span class="line"><span class="pn">Lip Ciggy</span><span class="pr">· $26</span></span>
+          </div>
+          <a class="btn alt" href="https://mphbeauty.com/products/lip-ciggy-tickled-pink" target="_blank" rel="nofollow sponsored noopener">m.ph</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#D0716B"></span>
+          <div class="meta">
+            <span class="role">Step 3 · For less</span>
+            <span class="name">L.A. Girl <b>Nude Honey</b></span>
+            <span class="line"><span class="pn">Shine On Glossy Balm</span><span class="pr">· $8</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=L.A.+Girl+Shine+On+Glossy+Balm+Nude+Honey&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="07" data-text="pick your cherry cola lip pick your cherry cola lip light to deep">
+      <header>
+        <span class="no">No. 07</span><span class="series">Light to Deep</span>
+      </header>
+      <h2>Pick Your Cherry Cola Lip</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#943539"></span>
+          <div class="meta">
+            <span class="role">Light skin</span>
+            <span class="name">NARS <b>Show Off 225</b></span>
+            <span class="line"><span class="pn">Afterglow Lipstick</span><span class="pr">· $36</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=NARS+Afterglow+Lipstick+Show+Off+225&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#7C3534"></span>
+          <div class="meta">
+            <span class="role">Medium skin</span>
+            <span class="name">Milani <b>Passion</b></span>
+            <span class="line"><span class="pn">Color Fetish Matte Lipstick</span><span class="pr">· $12</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Lipstick+Passion&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#691A24"></span>
+          <div class="meta">
+            <span class="role">Deep skin</span>
+            <span class="name">MAC <b>Diva</b></span>
+            <span class="line"><span class="pn">MACximal Silky Matte Lipstick</span><span class="pr">· $25</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Lipstick+Diva&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="06" data-text="why your nude looks gray why your nude looks gray warm or cool">
+      <header>
+        <span class="no">No. 06</span><span class="series">Warm or Cool</span>
+      </header>
+      <h2>Why Your Nude Looks Gray</h2>
       <ul>
         <li class="row">
           <span class="dot" style="background:#9A483B"></span>
           <div class="meta">
             <span class="role">Warm</span>
             <span class="name">MAC <b>Taupe</b></span>
-            <span class="line">MACximal Silky Matte</span>
+            <span class="line"><span class="pn">MACximal Silky Matte</span><span class="pr">· $25</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Taupe&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
         <li class="row">
-          <span class="dot" style="background:#BF6B63"></span>
+          <span class="dot" style="background:#A65746"></span>
           <div class="meta">
-            <span class="role">Neutral · leans warm</span>
-            <span class="name">Dior <b>100 Nude Look</b></span>
-            <span class="line">Rouge Dior</span>
+            <span class="role">Warm</span>
+            <span class="name">Charlotte Tilbury <b>Super Fabulous</b></span>
+            <span class="line"><span class="pn">Matte Revolution</span><span class="pr">· $37</span></span>
           </div>
-          <a class="btn alt" href="https://www.ulta.com/p/rouge-dior-lipstick-pimprod2043044?sku=2618570" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
-        </li>
-        <li class="row">
-          <span class="dot" style="background:#9D4C46"></span>
-          <div class="meta">
-            <span class="role">Neutral · leans warm</span>
-            <span class="name">MAC <b>Velvet Teddy</b></span>
-            <span class="line">MACximal Silky Matte</span>
-          </div>
-          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Velvet+Teddy&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
-        </li>
-        <li class="row">
-          <span class="dot" style="background:#D97373"></span>
-          <div class="meta">
-            <span class="role">Neutral</span>
-            <span class="name">Charlotte Tilbury <b>Pillow Talk</b></span>
-            <span class="line">Matte Revolution</span>
-          </div>
-          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619368" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619374" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
         </li>
         <li class="row">
           <span class="dot" style="background:#D1747C"></span>
           <div class="meta">
             <span class="role">Cool</span>
             <span class="name">NARS <b>Dolce Vita</b></span>
-            <span class="line">Afterglow Lipstick</span>
+            <span class="line"><span class="pn">Afterglow Lipstick</span><span class="pr">· $36</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=NARS+Afterglow+Lipstick+Dolce+Vita&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
-      </ul>
-    </article>
-    <article class="card" data-no="02" data-text="dior 999 velvet for less">
-      <header>
-        <span class="no">No. 02</span><span class="series">For Less</span>
-      </header>
-      <h2>Dior 999 Velvet</h2>
-      <ul>
         <li class="row">
-          <span class="dot" style="background:#C81D23"></span>
+          <span class="dot" style="background:#A2454D"></span>
           <div class="meta">
-            <span class="role">Original</span>
-            <span class="name">Dior <b>999 Velvet</b></span>
-            <span class="line">Rouge Dior Lipstick</span>
+            <span class="role">Cool</span>
+            <span class="name">Charlotte Tilbury <b>Pillow Talk Medium</b></span>
+            <span class="line"><span class="pn">Matte Revolution</span><span class="pr">· $37</span></span>
           </div>
-          <a class="btn alt" href="https://www.ulta.com/p/rouge-dior-lipstick-pimprod2043044?sku=2618524" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
-        </li>
-        <li class="row">
-          <span class="dot" style="background:#C01C2A"></span>
-          <div class="meta">
-            <span class="role">#1</span>
-            <span class="name">Juvia&#x27;s Place <b>New Flame</b></span>
-            <span class="line">The Red Satin Creamy Lipstick</span>
-          </div>
-          <a class="btn" href="https://www.amazon.com/s?k=Juvia%27s+Place+The+Red+Satin+Creamy+Lipstick+New+Flame&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
-        </li>
-        <li class="row">
-          <span class="dot" style="background:#BA2129"></span>
-          <div class="meta">
-            <span class="role">#2</span>
-            <span class="name">Milani <b>Red Flag</b></span>
-            <span class="line">Color Fetish Matte Lipstick</span>
-          </div>
-          <a class="btn" href="https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Lipstick+Red+Flag&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
-        </li>
-        <li class="row">
-          <span class="dot" style="background:#C7151E"></span>
-          <div class="meta">
-            <span class="role">#3</span>
-            <span class="name">BLK/OPL <b>C-Suite</b></span>
-            <span class="line">COLORSPLURGE Risqué Crème Lipstick</span>
-          </div>
-          <a class="btn" href="https://www.amazon.com/s?k=BLK%2FOPL+COLORSPLURGE+Risqu%C3%A9+Cr%C3%A8me+Lipstick+C-Suite&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619369" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
         </li>
       </ul>
     </article>
-    <article class="card" data-no="01" data-text="90s nudes spot the splurge">
+    <article class="card" data-no="05" data-text="same 90s nude same 90s nude spot the splurge">
       <header>
-        <span class="no">No. 01</span><span class="series">Spot the Splurge</span>
+        <span class="no">No. 05</span><span class="series">Spot the Splurge</span>
       </header>
-      <h2>90s Nudes</h2>
+      <h2>Same 90s Nude</h2>
       <ul>
         <li class="row">
           <span class="dot" style="background:#A55147"></span>
           <div class="meta">
             <span class="role">Round 1</span>
             <span class="name">Maybelline <b>Upstate</b></span>
-            <span class="line">Moisturizing Serum Lipstick</span>
+            <span class="line"><span class="pn">Moisturizing Serum Lipstick</span><span class="pr">· $9.99</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Upstate&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
@@ -204,7 +295,7 @@
           <div class="meta">
             <span class="role">Round 1</span>
             <span class="name">MAC <b>Velvet Teddy</b></span>
-            <span class="line">MACximal Silky Matte</span>
+            <span class="line"><span class="pn">MACximal Silky Matte</span><span class="pr">· $25</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Velvet+Teddy&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
@@ -213,7 +304,7 @@
           <div class="meta">
             <span class="role">Round 2</span>
             <span class="name">Charlotte Tilbury <b>Pillow Talk Medium</b></span>
-            <span class="line">Matte Revolution</span>
+            <span class="line"><span class="pn">Matte Revolution</span><span class="pr">· $37</span></span>
           </div>
           <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619369" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
         </li>
@@ -222,7 +313,7 @@
           <div class="meta">
             <span class="role">Round 2</span>
             <span class="name">Milani <b>Smitten</b></span>
-            <span class="line">Color Fetish Matte</span>
+            <span class="line"><span class="pn">Color Fetish Matte</span><span class="pr">· $11.99</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Smitten&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
@@ -231,7 +322,7 @@
           <div class="meta">
             <span class="role">Round 3</span>
             <span class="name">Maybelline <b>Out &#x27;Til 4</b></span>
-            <span class="line">Moisturizing Serum Lipstick</span>
+            <span class="line"><span class="pn">Moisturizing Serum Lipstick</span><span class="pr">· $9.99</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Out+%27Til+4&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
@@ -240,9 +331,176 @@
           <div class="meta">
             <span class="role">Round 3</span>
             <span class="name">MAC <b>Whirl</b></span>
-            <span class="line">MACximal Silky Matte</span>
+            <span class="line"><span class="pn">MACximal Silky Matte</span><span class="pr">· $25</span></span>
           </div>
           <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Silky+Matte+Whirl&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="04" data-text="chanel 174 endless pink chanel 174 dupe ($53 → $16) dupes">
+      <header>
+        <span class="no">No. 04</span><span class="series">Dupes</span><span class="save">Save $37</span>
+      </header>
+      <h2>Chanel 174 Dupe ($53 → $16)</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#CA5457"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Chanel <b>174 Endless Pink</b></span>
+            <span class="line"><span class="pn">Le Rouge Duo Ultra Tenue</span><span class="pr">· $53</span></span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/le-rouge-duo-ultra-tenue-ultrawear-liquid-lip-colour-pimprod2029989?sku=2652945" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#CA5457"></span>
+          <div class="meta">
+            <span class="role">Dupe 1 · in the video</span>
+            <span class="name">L&#x27;Oréal Paris <b>230 Shopping Spree</b></span>
+            <span class="line"><span class="pn">Infallible Matte Resistance Liquid Lipstick</span><span class="pr">· $16</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=L%27Or%C3%A9al+Paris+Infallible+Matte+Resistance+Liquid+Lipstick+230+Shopping+Spree&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#B4525F"></span>
+          <div class="meta">
+            <span class="role">Dupe 2</span>
+            <span class="name">Maybelline <b>Ringleader</b></span>
+            <span class="line"><span class="pn">SuperStay Matte Ink Liquid Lipstick</span><span class="pr">· $13</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+SuperStay+Matte+Ink+Liquid+Lipstick+Ringleader&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="03" data-text="charlotte tilbury pillow talk pillow talk dupe ($37 → $25) dupes">
+      <header>
+        <span class="no">No. 03</span><span class="series">Dupes</span><span class="save">Save $12</span>
+      </header>
+      <h2>Pillow Talk Dupe ($37 → $25)</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#D97373"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Charlotte Tilbury <b>Pillow Talk</b></span>
+            <span class="line"><span class="pn">Matte Revolution</span><span class="pr">· $37</span></span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619368" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#E27973"></span>
+          <div class="meta">
+            <span class="role">Dupe 1 · in the video</span>
+            <span class="name">MAC <b>Crème Cup</b></span>
+            <span class="line"><span class="pn">MACximal Sleek Satin Lipstick</span><span class="pr">· $25</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=MAC+MACximal+Sleek+Satin+Lipstick+Cr%C3%A8me+Cup&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#D68583"></span>
+          <div class="meta">
+            <span class="role">Dupe 2</span>
+            <span class="name">Anastasia Beverly Hills <b>Hush Pink</b></span>
+            <span class="line"><span class="pn">Full-Pigment Matte &amp; Satin Velvet Lipstick</span><span class="pr">· $26</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Anastasia+Beverly+Hills+Full-Pigment+Matte+%26+Satin+Velvet+Lipstick+Hush+Pink&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#D6797C"></span>
+          <div class="meta">
+            <span class="role">Dupe 3</span>
+            <span class="name">Clinique <b>Sugar Pop</b></span>
+            <span class="line"><span class="pn">Pop Longwear Lipstick</span><span class="pr">· $27</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Clinique+Pop+Longwear+Lipstick+Sugar+Pop&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="02" data-text="charlotte tilbury walk of no shame walk of no shame dupe ($37 → $16) dupes">
+      <header>
+        <span class="no">No. 02</span><span class="series">Dupes</span><span class="save">Save $21</span>
+      </header>
+      <h2>Walk of No Shame Dupe ($37 → $16)</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#9D1717"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Charlotte Tilbury <b>Walk Of No Shame</b></span>
+            <span class="line"><span class="pn">Matte Revolution</span><span class="pr">· $37</span></span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/matte-revolution-hydrating-lipstick-pimprod2043355?sku=2619377" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#99171D"></span>
+          <div class="meta">
+            <span class="role">Dupe 1 · in the video</span>
+            <span class="name">Revlon <b>Fireside</b></span>
+            <span class="line"><span class="pn">Super Lustrous Ultra Lipstick</span><span class="pr">· $16</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Revlon+Super+Lustrous+Ultra+Lipstick+Fireside&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#A61421"></span>
+          <div class="meta">
+            <span class="role">Dupe 2</span>
+            <span class="name">Maybelline <b>Wild Card</b></span>
+            <span class="line"><span class="pn">Moisturizing Serum Lipstick</span><span class="pr">· $9.99</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Maybelline+Moisturizing+Serum+Lipstick+Wild+Card&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#982324"></span>
+          <div class="meta">
+            <span class="role">Dupe 3</span>
+            <span class="name">BLK/OPL <b>Orange You Fierce</b></span>
+            <span class="line"><span class="pn">COLORSPLURGE Risqué Crème Lipstick</span><span class="pr">· $10.75</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=BLK%2FOPL+COLORSPLURGE+Risqu%C3%A9+Cr%C3%A8me+Lipstick+Orange+You+Fierce&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+      </ul>
+    </article>
+    <article class="card" data-no="01" data-text="dior 999 velvet dior 999 dupe ($50 → $15) dupes">
+      <header>
+        <span class="no">No. 01</span><span class="series">Dupes</span><span class="save">Save $35</span>
+      </header>
+      <h2>Dior 999 Dupe ($50 → $15)</h2>
+      <ul>
+        <li class="row">
+          <span class="dot" style="background:#C81D23"></span>
+          <div class="meta">
+            <span class="role">Original</span>
+            <span class="name">Dior <b>999 Velvet</b></span>
+            <span class="line"><span class="pn">Rouge Dior Lipstick</span><span class="pr">· $50</span></span>
+          </div>
+          <a class="btn alt" href="https://www.ulta.com/p/rouge-dior-lipstick-pimprod2043044?sku=2618524" target="_blank" rel="nofollow sponsored noopener">Ulta</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#C01C2A"></span>
+          <div class="meta">
+            <span class="role">Dupe 1 · in the video</span>
+            <span class="name">Juvia&#x27;s Place <b>New Flame</b></span>
+            <span class="line"><span class="pn">The Reds Satin Creamy Lipstick</span><span class="pr">· $15</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Juvia%27s+Place+The+Reds+Satin+Creamy+Lipstick+New+Flame&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#BA2129"></span>
+          <div class="meta">
+            <span class="role">Dupe 2</span>
+            <span class="name">Milani <b>Red Flag</b></span>
+            <span class="line"><span class="pn">Color Fetish Matte Lipstick</span><span class="pr">· $11.99</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=Milani+Color+Fetish+Matte+Lipstick+Red+Flag&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
+        </li>
+        <li class="row">
+          <span class="dot" style="background:#C7151E"></span>
+          <div class="meta">
+            <span class="role">Dupe 3</span>
+            <span class="name">BLK/OPL <b>C-Suite</b></span>
+            <span class="line"><span class="pn">COLORSPLURGE Risqué Crème Lipstick</span><span class="pr">· $10.75</span></span>
+          </div>
+          <a class="btn" href="https://www.amazon.com/s?k=BLK%2FOPL+COLORSPLURGE+Risqu%C3%A9+Cr%C3%A8me+Lipstick+C-Suite&amp;tag=shadesagebeau-20" target="_blank" rel="nofollow sponsored noopener">Amazon</a>
         </li>
       </ul>
     </article>
