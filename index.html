@@ -13,7 +13,8 @@
   body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; }
   .wrap { max-width:640px; margin:0 auto; padding:28px 16px 48px; }
   h1 { font-size:34px; font-weight:900; letter-spacing:-.02em; margin:0; text-align:center; }
-  .sub { text-align:center; color:var(--muted); margin:8px 0 20px; font-size:15px; }
+  .sub { text-align:center; color:var(--muted); margin:8px 0 6px; font-size:15px; }
+  .disc { text-align:center; color:var(--muted); margin:0 0 18px; font-size:12.5px; }
   .search { display:flex; gap:8px; margin:0 0 20px; }
   .search input { flex:1; font:inherit; font-size:16px; padding:14px 16px; border-radius:14px; border:1.5px solid var(--soft); background:var(--card); }
   .search input:focus { outline:none; border-color:var(--rose); }
@@ -44,6 +45,7 @@
 <div class="wrap">
   <h1>Shop @shadesagebeauty</h1>
   <p class="sub">Find the video number from the caption.</p>
+  <p class="disc">As an Amazon Associate I earn from qualifying purchases.</p>
   <div class="search"><input id="q" inputmode="search" placeholder="Video No. (e.g. 04) or shade" aria-label="Search by video number or shade"></div>
   
     <article class="card" data-no="24" data-text="dior 200 nude pulse dior 200 nude pulse dupe ($48 → $12) quiz">
@@ -451,7 +453,7 @@
     </article>
   <p class="empty" id="empty">No match. Try the number from the caption.</p>
   <footer>
-    As an Amazon Associate I earn from qualifying purchases. Products without a button aren't sold on Amazon.<br>
+    Products without a button aren't sold on Amazon.<br>
     Prices shown in videos are at time of posting.
   </footer>
 </div>
